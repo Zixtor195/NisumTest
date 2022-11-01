@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/navigation_fragment_pokemon_list">
+
+
+    <fragment
+        android:id="@+id/navigation_fragment_pokemon_list"
+        android:name="com.example.nisumtest.ui.views.FragmentPokemonList"
+        tools:layout="@layout/fragment_pokemon_list">
+        <action
+            android:id="@+id/action_navigation_fragment_pokemon_list_to_navigation_fragment_pokemon_details"
+            app:destination="@id/navigation_fragment_pokemon_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fragment_pokemon_details"
+        android:name="com.example.nisumtest.ui.views.FragmentPokemonDetails"
+        tools:layout="@layout/fragment_pokemon_details">
+        <argument
+            android:name="pokemon_item_list_details"
+            app:argType="com.example.nisumtest.core.models.PokemonItemListDetails" />
+    </fragment>
+
+</navigation>
